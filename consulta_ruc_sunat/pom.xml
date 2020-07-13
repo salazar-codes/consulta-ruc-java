@@ -33,7 +33,7 @@
 	    <artifactId>htmlunit</artifactId>
 	    <version>2.41.0</version>
 	</dependency>
-	
+	<!-- AGREGANDO DEPENDENCIA PARA LECTURA DE IMAGENES -> TEXTO -->
 	<dependency>
 		<groupId>net.sourceforge.tess4j</groupId>
 		<artifactId>tess4j</artifactId>
