@@ -6,12 +6,24 @@ import java.util.Scanner;
  * MAIN CLASS
  *
  */
-public class App 
-{
+public class App {
+
+	// VERSION 2
+	public static void main(String[] args) {
+		
+		String miRuc = "20508972734";
+		
+		ConsultaRucServiceV2 servicio = new ConsultaRucServiceV2();
+		servicio.consultarRuc(miRuc);
+
+	}
+
 	
+	// VERSION 1
+	/*
     public static void main( String[] args )
     {        
-        ConsultaRucService servicio = new ConsultaRucService();
+        ConsultaRucServiceV1 servicio = new ConsultaRucServiceV1();
         
         servicio.generarCaptcha();
         
@@ -23,5 +35,6 @@ public class App
         servicio.realizarConsulta(codigoCaptcha);
         
     }
-    
+	*/
+
 }

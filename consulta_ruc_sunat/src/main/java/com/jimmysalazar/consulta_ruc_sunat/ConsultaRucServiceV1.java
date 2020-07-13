@@ -19,7 +19,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlTableCell;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 
-public class ConsultaRucService {
+public class ConsultaRucServiceV1 {
 	
 	WebClient webCLiente = new WebClient(); //Navegador 
 	HtmlPage htmlPage = null; // Pagina a cargar
@@ -51,7 +51,7 @@ public class ConsultaRucService {
     		System.out.println("********* Cargando página *********");
     		htmlPage = webCLiente.getPage(url);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
     }
     
@@ -70,6 +70,10 @@ public class ConsultaRucService {
     		ImageIO.write(buf, "jpg", outputfile);
             
             System.out.println("********* CAPTCHA GENERADO: " + currentIMG + " *********");
+            
+            //Leer la imagen automáticamente
+            
+            
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -170,5 +174,5 @@ public class ConsultaRucService {
     	mostrarRespuestaSunat();
         
     }
-
+    
 }

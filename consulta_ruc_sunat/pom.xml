@@ -26,12 +26,20 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    
     <!-- AGREGANDO DEPENDENCIA PARA WEB SCRAPPING HTMLUNIT https://htmlunit.sourceforge.io/ -->
     <dependency>
 	    <groupId>net.sourceforge.htmlunit</groupId>
 	    <artifactId>htmlunit</artifactId>
 	    <version>2.41.0</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>net.sourceforge.tess4j</groupId>
+		<artifactId>tess4j</artifactId>
+		<version>4.3.0</version>
+	</dependency>
+	
   </dependencies>
 
   <build>
