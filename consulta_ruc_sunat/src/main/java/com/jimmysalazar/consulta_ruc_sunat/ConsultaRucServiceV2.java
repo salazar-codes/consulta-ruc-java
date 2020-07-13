@@ -32,16 +32,17 @@ public class ConsultaRucServiceV2 {
 	WebClient webCLiente = new WebClient(); // Navegador
 	HtmlPage htmlPage = null; // Pagina a cargar
 
-	public void consultarRuc(String ruc) {
+	public Respuesta consultarRuc(String ruc) {
 		try {
 
 			loadingSearch();
 			String captchaGenerated = loadingReadCaptcha();
 			consultaServicio(ruc, captchaGenerated);
-			mostrarRespuestaSunat();
+			return mostrarRespuestaSunat();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			return null;
 		}
 	}
 	
@@ -126,10 +127,12 @@ public class ConsultaRucServiceV2 {
 		}
 	}
 
-	private void mostrarRespuestaSunat() {
+	private Respuesta mostrarRespuestaSunat() {
 
 		// MOSTRANDO DATA
 		String resultado = "";
+		Respuesta respuesta = new Respuesta();
+		
 		String razonSocial = "";
 		String tipoContribuyente = "";
 		String domicilioFiscal = "";
@@ -160,13 +163,16 @@ public class ConsultaRucServiceV2 {
 
 			// System.out.println(resultado);
 			System.out.println("********** RESPUESTA SUNAT *********");
-
-			System.out.println("Razon S:" + razonSocial);
-			System.out.println("Tipo Contribuyente:" + tipoContribuyente);
-			System.out.println("Domicilio Fiscal:" + domicilioFiscal);
+			
+			respuesta.setRazonSocial(razonSocial);
+			respuesta.setTipoContribuyente(tipoContribuyente);
+			respuesta.setDireccionFiscal(domicilioFiscal);
+			
+			return respuesta;
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			return null;
 		}
 
 	}

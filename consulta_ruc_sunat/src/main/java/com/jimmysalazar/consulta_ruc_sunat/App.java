@@ -14,8 +14,12 @@ public class App {
 		String miRuc = "20508972734";
 		
 		ConsultaRucServiceV2 servicio = new ConsultaRucServiceV2();
-		servicio.consultarRuc(miRuc);
-
+		Respuesta rpta = servicio.consultarRuc(miRuc);
+		
+		System.out.println("Razon S:" + rpta.getRazonSocial());
+		System.out.println("Tipo Contribuyente:" + rpta.getTipoContribuyente());
+		System.out.println("Domicilio Fiscal:" + rpta.getDireccionFiscal());
+		
 	}
 
 	
