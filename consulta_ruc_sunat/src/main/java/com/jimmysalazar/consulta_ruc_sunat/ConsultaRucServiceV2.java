@@ -154,12 +154,14 @@ public class ConsultaRucServiceV2 {
 					if (i == 1 && j == 1) {
 						tipoContribuyente = td.asText().trim();
 					}
-					if (i == 7 && j == 1) {
+					if (i == 6 && j == 1) {
 						domicilioFiscal = td.asText().trim();
 					}
 
 				}
 			}
+			
+			System.out.println("RESULTADO:" + resultado);
 
 			// System.out.println(resultado);
 			System.out.println("********** RESPUESTA SUNAT *********");
