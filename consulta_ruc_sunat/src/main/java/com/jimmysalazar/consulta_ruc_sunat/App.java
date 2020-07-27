@@ -11,8 +11,8 @@ public class App {
 	// VERSION 2
 	public static void main(String[] args) {
 		
-		//String miRuc = "20508972734";
-		String miRuc = "10742776137";
+		String miRuc = "20508972734";
+		//String miRuc = "10742776137";
 		
 		ConsultaRucServiceV2 servicio = new ConsultaRucServiceV2();
 		Respuesta rpta = servicio.consultarRuc(miRuc);

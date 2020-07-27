@@ -38,7 +38,7 @@ public class ConsultaRucServiceV2 {
 			loadingSearch();
 			String captchaGenerated = loadingReadCaptcha();
 			consultaServicio(ruc, captchaGenerated);
-			return mostrarRespuestaSunat();
+			return mostrarRespuestaSunat(ruc);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -127,7 +127,7 @@ public class ConsultaRucServiceV2 {
 		}
 	}
 
-	private Respuesta mostrarRespuestaSunat() {
+	private Respuesta mostrarRespuestaSunat(String ruc) {
 
 		// MOSTRANDO DATA
 		String resultado = "";
@@ -136,6 +136,12 @@ public class ConsultaRucServiceV2 {
 		String razonSocial = "";
 		String tipoContribuyente = "";
 		String domicilioFiscal = "";
+		
+		int rowDomicilio = 6;
+		// DETERMINANDO DE QUÉ FILA TRAERÁ EL DOMICILIO FISCAL
+		if(ruc.startsWith("1")) {
+			rowDomicilio = 7;
+		}
 
 		try {
 			HtmlTable htmlTable = (HtmlTable) htmlPage.getByXPath("//table[@class='form-table']").get(2);
@@ -154,7 +160,7 @@ public class ConsultaRucServiceV2 {
 					if (i == 1 && j == 1) {
 						tipoContribuyente = td.asText().trim();
 					}
-					if (i == 6 && j == 1) {
+					if (i == rowDomicilio && j == 1) {
 						domicilioFiscal = td.asText().trim();
 					}
 
