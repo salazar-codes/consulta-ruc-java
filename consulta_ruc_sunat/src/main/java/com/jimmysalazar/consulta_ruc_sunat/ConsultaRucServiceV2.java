@@ -190,6 +190,7 @@ public class ConsultaRucServiceV2 {
 		Tesseract instance = new Tesseract();
 		// instance.setDatapath("/usr/local/Cellar/tesseract/4.0.0/share/tessdata");
 		instance.setDatapath(PATH_TESSDATA_FILES);
+		//instance.setDatapath(new File(PATH_TESSDATA_FILES).getPath());
 		instance.setLanguage("eng");
 		instance.setHocr(false);
 		return instance;

@@ -26,6 +26,14 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+	<!-- EN ALGUNOS CASOS CUANDO HAY CONFLICTO CON HTMULINI SE REQUIERE ESPECIFICAR ESTA DEPENDENCIA -->    
+	<!--     <dependency>  -->
+	<!-- 		    <groupId>xml-apis</groupId> -->
+	<!-- 		    <artifactId>xml-apis</artifactId> -->
+	<!-- 		    <version>1.4.01</version> -->
+	<!-- 	</dependency> -->
+		
     
     <!-- AGREGANDO DEPENDENCIA PARA WEB SCRAPPING HTMLUNIT https://htmlunit.sourceforge.io/ -->
     <dependency>
